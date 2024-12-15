@@ -1,14 +1,12 @@
+import LoadingPrompt from "@/components/shared/LoadingPrompt"
 import PostCard from "@/components/shared/PostCard"
-import LoadingPrompt from "@/components/shared/loadingPrompt"
 import { useGetRecentPosts } from "@/lib/React-Query/querysAndMutation"
 import { Models } from "appwrite"
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+
 import { HashLoader } from "react-spinners"
 
 function Home() {
-  const { data: posts, isPending: isPostsLoading, isError: isPostError } = useGetRecentPosts()
-  const [loading, setLoading] = useState(true)
+  const { data: posts, isPending: isPostsLoading } = useGetRecentPosts()
   // useEffect(()=>{
   //   if(!isPostsLoading){
   //     console.log(posts)

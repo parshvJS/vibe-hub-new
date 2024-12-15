@@ -1,4 +1,3 @@
-import React, { useContext } from 'react';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -14,7 +13,6 @@ import { Models } from 'appwrite';
 import FileUploader from '../shared/FileUploder';
 import { useCreatePost } from '@/lib/React-Query/querysAndMutation';
 import { useUserContext } from '@/context/authContext';
-import { useToast } from '../ui/use-toast';
 import { useNavigate } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 
@@ -29,7 +27,6 @@ const PostForm = ({ post }: PostFormProps) => {
     const { mutateAsync: createPost, isPending: isPosting } =
         useCreatePost();
     // 1. Define your form.
-    const toast = useToast()
     const form = useForm<z.infer<typeof PostFormValidation>>({
         resolver: zodResolver(PostFormValidation),
         defaultValues: {

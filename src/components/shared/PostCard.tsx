@@ -1,15 +1,12 @@
-import { useUserContext } from '@/context/authContext'
 import { formatDateAgo } from '@/lib/utils'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip'
 import { Models } from 'appwrite'
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import PostStats from './PostStats'
 type PostCardPropr = {
   post: Models.Document,
 }
 const PostCard = (post: PostCardPropr) => {
-  const { user } = useUserContext()
   useEffect(() => {
     console.log('secongd', post.post, post.post.creator)
   }, [])

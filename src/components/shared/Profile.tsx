@@ -1,5 +1,4 @@
 import { useUserContext } from '@/context/authContext'
-import React from 'react'
 
 const Profile = () => {
   const  {user} =useUserContext()

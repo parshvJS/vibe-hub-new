@@ -1,7 +1,6 @@
 import { INewPost, INewUser } from "@/types";
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
 import { ID, Query } from "appwrite";
-import { useUserContext } from "@/context/authContext";
 
 export const result = avatars.getInitials();
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import PostForm from '../forms/PostForm'
 
 const CreatePost = () => {
@@ -13,7 +12,9 @@ const CreatePost = () => {
       </div>
 
       {/* form */}
-      <PostForm/>
+      <PostForm
+        action='Create'
+       /> 
     </div>
  
     )
